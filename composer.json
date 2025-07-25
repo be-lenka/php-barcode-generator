@@ -1,0 +1,21 @@
+{
+    "name": "be-lenka/php-barcode-generator",
+    "type": "library",
+    "license": "",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "BeLenka\\BarcodeGenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tomas-378",
+            "email": "tomas.sentkeresty@belenka.com"
+        }
+    ],
+    "require": {
+        "tecnickcom/tcpdf": "^6.10"
+    }
+}
