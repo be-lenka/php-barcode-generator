@@ -35,7 +35,7 @@ class MyService
             return $svg;
         } catch (BarcodeGeneratorException $e) {
             // log exception if needed:
-            // $this->logger->warning('Unable to render barcode.', ['exception' => $e]);
+            $this->logger->warning('Unable to render barcode.', ['exception' => $e]);
 
             return null;
         }
