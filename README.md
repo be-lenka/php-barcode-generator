@@ -45,3 +45,6 @@ class MyService
     }
 }
 ```
+
+Visually, the output should look like this:  
+![ean13 barcode](screenshots/barcode-generator-ean13.png)
