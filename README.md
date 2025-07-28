@@ -14,7 +14,11 @@ services:
 
 ```
 
+Call `getSVGcode()` in your service:
 ```php
+use BeLenka\BarcodeGenerator\BarcodeGeneratorEAN13;
+use BeLenka\BarcodeGenerator\BarcodeGeneratorException;
+
 class MyService
 {
     public function __construct(
@@ -25,7 +29,6 @@ class MyService
 
     /**
      * @throws BarcodeGeneratorException
-     * @throws \Exception
      */
     public function myFunc(string $code): ?string
     {
@@ -35,7 +38,7 @@ class MyService
             return $svg;
         } catch (BarcodeGeneratorException $e) {
             // log exception if needed:
-            $this->logger->warning('Unable to render barcode.', ['exception' => $e]);
+            // $this->logger->warning('Unable to render barcode.', ['exception' => $e]);
 
             return null;
         }
