@@ -1,5 +1,10 @@
 # php-barcode-generator
 
+## Install
+```bash
+composer require be-lenka/php-barcode-generator:dev-master
+```
+
 ## Usage in a symfony app
 
 Register following classes in `config/services.yaml`:
