@@ -6,6 +6,8 @@ class BarcodeGeneratorEAN13
 {
     private const EAN13_LENGTH = 13;
 
+    private const FONT_FAMILY = 'Libre Barcode EAN13 Text';
+
     public function __construct(
         private TCPDFBarcodeFactory $TCPDFBarcodeFactory,
     ) {
@@ -107,7 +109,7 @@ class BarcodeGeneratorEAN13
         $svg = '';
 
         $svg .= "\t".'<g id="legend">'."\n";
-        $svg .= "\t\t".'<text y="90" font-family="Libre Barcode EAN13 Text" font-size="24">'."\n";
+        $svg .= "\t\t".'<text y="90" font-family="' . self::FONT_FAMILY . '" font-size="24">'."\n";
         $svg .= "\t\t\t".'<tspan x="0">'.$codeStart.'</tspan>'."\n";
         $svg .= "\t\t\t".'<tspan x="30">'.$codeCentre.'</tspan>'."\n";
         $svg .= "\t\t\t".'<tspan x="122">'.$codeEnd.'</tspan>'."\n";
