@@ -58,9 +58,9 @@ class BarcodeGeneratorEAN13
      * @return string SVG code.
      */
     private function getBarcodeSVGcode($barcode_array, $w=2, $h=70, $color='black'): string {
-        $bars_x_offset = 16;
+        $bars_x_offset = 18;
         $safe_gap_right = 4;
-        $safe_gap_bottom = 2;
+        $safe_gap_bottom = 1;
 
         // replace table for special characters
         $repstr = array("\0" => '', '&' => '&amp;', '<' => '&lt;', '>' => '&gt;');
@@ -112,9 +112,9 @@ class BarcodeGeneratorEAN13
 
         $svg .= "\t".'<g id="legend">'."\n";
         $svg .= "\t\t".'<text y="90" font-family="' . self::FONT_FAMILY . '" font-size="24">'."\n";
-        $svg .= "\t\t\t".'<tspan x="0">'.$codeStart.'</tspan>'."\n";
-        $svg .= "\t\t\t".'<tspan x="30">'.$codeCentre.'</tspan>'."\n";
-        $svg .= "\t\t\t".'<tspan x="122">'.$codeEnd.'</tspan>'."\n";
+        $svg .= "\t\t\t".'<tspan x="2">'.$codeStart.'</tspan>'."\n";
+        $svg .= "\t\t\t".'<tspan x="32">'.$codeCentre.'</tspan>'."\n";
+        $svg .= "\t\t\t".'<tspan x="124">'.$codeEnd.'</tspan>'."\n";
         $svg .= "\t\t".'</text>'."\n";
         $svg .= "\t".'</g>'."\n";
 
