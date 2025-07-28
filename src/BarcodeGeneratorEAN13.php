@@ -59,12 +59,14 @@ class BarcodeGeneratorEAN13
      */
     private function getBarcodeSVGcode($barcode_array, $w=2, $h=70, $color='black'): string {
         $bars_x_offset = 16;
+        $safe_gap_right = 4;
+        $safe_gap_bottom = 2;
 
         // replace table for special characters
         $repstr = array("\0" => '', '&' => '&amp;', '<' => '&lt;', '>' => '&gt;');
         $svg = '<'.'?'.'xml version="1.0" standalone="no"'.'?'.'>'."\n";
         $svg .= '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">'."\n";
-        $svg .= '<svg width="'.round(($barcode_array['maxw'] * $w) + $bars_x_offset, 3).'" height="'.($h+24).'" version="1.1" xmlns="http://www.w3.org/2000/svg">'."\n";
+        $svg .= '<svg width="'.round(($barcode_array['maxw'] * $w) + $bars_x_offset + $safe_gap_right, 3).'" height="'.($h + 24 + $safe_gap_bottom).'" version="1.1" xmlns="http://www.w3.org/2000/svg">'."\n";
         $svg .= "\t".'<desc>'.strtr($barcode_array['code'], $repstr).'</desc>'."\n";
         $svg .= "\t".'<g id="bars" fill="'.$color.'" stroke="none">'."\n";
         // print bars
