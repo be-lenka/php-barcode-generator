@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace BeLenka\BarcodeGenerator;
 
@@ -12,18 +12,18 @@ class BarcodeGeneratorEAN13
     }
 
     /**
-     * @throws BarcodeException
+     * @throws BarcodeGeneratorException
      */
     public function getSVGcode(string $code): string
     {
         if (!$this->isValidEAN13($code)) {
-            throw new BarcodeException('Invalid EAN13 code.');
+            throw new BarcodeGeneratorException('Invalid EAN13 code.');
         }
 
         try {
             $TCPDFBarcode = $this->TCPDFBarcodeFactory->create($code, TCPDFBarcodeType::TYPE_EAN13);
         } catch (\Throwable $th) {
-            throw new BarcodeException('Unable to instantiate (TCPDFBarcode); Probably invalid EAN13 code.', 0, $th);
+            throw new BarcodeGeneratorException('Unable to instantiate (TCPDFBarcode); Probably invalid EAN13 code.', 0, $th);
         }
 
         $barcodeArray = $TCPDFBarcode->getBarcodeArray();
@@ -126,7 +126,7 @@ class BarcodeGeneratorEAN13
      */
     private function parseHumanFriendlyCodeParts(string $code): array {
         if (mb_strlen($code) !== self::EAN13_LENGTH) {
-            throw new BarcodeException('The (code) must be (' . self::EAN13_LENGTH . ') chars long.');
+            throw new BarcodeGeneratorException('The (code) must be (' . self::EAN13_LENGTH . ') chars long.');
         }
 
         $cursor = 1;

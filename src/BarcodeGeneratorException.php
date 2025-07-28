@@ -2,7 +2,6 @@
 
 namespace BeLenka\BarcodeGenerator;
 
-class TCPDFBarcodeType
+class BarcodeGeneratorException extends \Exception
 {
-    public const TYPE_EAN13 = 'EAN13';
 }
