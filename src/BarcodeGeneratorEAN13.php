@@ -106,9 +106,9 @@ class BarcodeGeneratorEAN13
 
         $svg = '';
 
-        $svg .= "\t".'<style>'."\n";
-        $svg .= "\t"."@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+EAN13+Text&display=swap');"."\n";
-        $svg .= "\t".'</style>'."\n";
+        // $svg .= "\t".'<style>'."\n";
+        // $svg .= "\t"."@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+EAN13+Text&display=swap');"."\n";
+        // $svg .= "\t".'</style>'."\n";
 
         $svg .= "\t".'<g id="legend">'."\n";
         $svg .= "\t\t".'<text y="90" font-family="Libre Barcode EAN13 Text" font-size="24">'."\n";
