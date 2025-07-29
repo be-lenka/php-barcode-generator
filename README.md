@@ -51,5 +51,13 @@ class MyService
 }
 ```
 
+Load font for page in twig template:
+```twig
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Barcode+EAN13+Text&display=swap"/>
+{% endblock %}
+```
+
 Visually, the output should look like this:  
 ![ean13 barcode](screenshots/barcode-generator-ean13.png)
